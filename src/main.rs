@@ -1,11 +1,9 @@
-use std::{ops::Deref, process::Command,error::Error,};
+use std::{ops::Deref, process::Command,error::Error,thread, time};
  use std::io::{stdin,stdout,Write};
 use ::array_init::array_init;
  use viuer::{Config, print_from_file};
 use rand;
- use std::{thread, time};
-struct FlagItem
-    {
+struct FlagItem    {
         title:String,
         url: String,
         filename: String,
