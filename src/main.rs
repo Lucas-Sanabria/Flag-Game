@@ -1,9 +1,10 @@
-use std::{ops::Deref, process::Command,error::Error,thread, time};
+use std::{ops::Deref, process::Command,error::Error,thread,time};
  use std::io::{stdin,stdout,Write};
 use ::array_init::array_init;
  use viuer::{Config, print_from_file};
 use rand;
-struct FlagItem    {
+struct FlagItem
+    {
         title:String,
         url: String,
         filename: String,
@@ -16,6 +17,15 @@ impl Default for FlagItem {
         filename: "".to_owned(),
         }
     }
+}
+fn termclear()
+{
+if cfg!(target_os = "windows") {
+let cmd= std::process::Command::new("cls").status().unwrap();
+}
+    else {
+            let he =Command::new("clear").status().unwrap();    
+        }
 }
 fn main() 
     {
@@ -40,8 +50,7 @@ fn main()
  	{
      	let mut correct=0;
      	let  current=indexes.index(i);
-    	// println!(flag_list[current].filename.as_str());
-        let he =Command::new("clear").status().unwrap();
+        termclear();
     	print_from_file(&woo[current].filename, &conf).expect("Image printing failed.");
      	while  correct==0
         	{   let mut s= String::new();
