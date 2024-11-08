@@ -4,6 +4,8 @@ Flag Guessing Game CLI made in rust to Guess all the flags in the world includin
 
 
 Controls:
--type the name of the flag in the terminal to guess
--type "next" to try the next flag
--shows accuracy at the end
+- uncomment the lines at the bottom of the src file when you run the program for the first time (this scrapes all the necessary images)
+- comment them out when you run the game the second time
+- type the name of the flag in the terminal to guess
+- type "next" to try the next flag
+- shows accuracy at the end
